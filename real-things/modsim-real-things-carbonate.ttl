@@ -1,6 +1,7 @@
-# baseURI: http://example.org/real
+# baseURI: http://prov.example.org/real/carbonate-analysis
 # imports: http://www.w3.org/ns/prov
 
+@prefix carb: <http://prov.example.org/real/carbonate-analysis/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -9,182 +10,182 @@
 @prefix record: <http://example.org/record/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/real>
+<http://prov.example.org/real/carbonate-analysis>
   rdf:type owl:Ontology ;
   owl:imports <http://www.w3.org/ns/prov> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-real:AvrilGeologist
+carb:AvrilGeologist
   rdf:type prov:Agent ;
   rdfs:label "Avril F Geologist"^^xsd:string ;
 .
-real:BarryTech
+carb:BarryTech
   rdf:type prov:Agent ;
   rdfs:label "Barry L Technician"^^xsd:string ;
 .
-real:BentFormation
+carb:BentFormation
   rdf:type prov:Entity ;
   rdfs:label "Bentleigh Formation"^^xsd:string ;
 .
-real:CPVEvent_5
+carb:CPVEvent_5
   rdf:type prov:Activity ;
   rdfs:label "CPV analysis event" ;
-  prov:used real:CPVProtocol ;
-  prov:used real:s987654_2_c_t115 ;
-  prov:used real:s987654_2_c_t16 ;
-  prov:used real:s987654_2_c_t250 ;
-  prov:used real:s987654_2_c_t250plus ;
-  prov:used real:s987654_2_c_t32 ;
-  prov:used real:s987654_2_c_t60 ;
-  prov:used real:s987654_2_c_t9 ;
-  prov:wasAssociatedWith real:DianeTech ;
+  prov:used carb:CPVProtocol ;
+  prov:used carb:s987654_2_c_t115 ;
+  prov:used carb:s987654_2_c_t16 ;
+  prov:used carb:s987654_2_c_t250 ;
+  prov:used carb:s987654_2_c_t250plus ;
+  prov:used carb:s987654_2_c_t32 ;
+  prov:used carb:s987654_2_c_t60 ;
+  prov:used carb:s987654_2_c_t9 ;
+  prov:wasAssociatedWith carb:DianeTech ;
 .
-real:CPVProtocol
+carb:CPVProtocol
   rdf:type prov:Plan ;
   rdfs:label "CPV Protocol" ;
 .
-real:ClaudeGeologist
+carb:CarbonateResult_cpv_s987654
+  rdf:type prov:Entity ;
+  rdfs:label "Carbonate result - cpv #1" ;
+  prov:wasGeneratedBy carb:CPVEvent_5 ;
+.
+carb:CarbonateResult_v_s987654
+  rdf:type prov:Entity ;
+  rdfs:label "Carbonate result - v #1" ;
+  prov:wasGeneratedBy carb:VisualAnalysisEvent_6 ;
+.
+carb:ClaudeGeologist
   rdf:type prov:Agent ;
   rdfs:label "Claude L Geologist"^^xsd:string ;
 .
-real:DianeTech
+carb:DianeTech
   rdf:type prov:Agent ;
   rdfs:label "Diane L Technician"^^xsd:string ;
 .
-real:Hammer-N
+carb:Hammer-N
   rdf:type prov:Agent ;
   rdfs:label "G-pick" ;
 .
-real:IGSN-CSI987654
+carb:IGSN-CSI987654
   rdf:type prov:Entity ;
   rdfs:label "Field specimen 987654"^^xsd:string ;
-  prov:wasDerivedFrom real:BentFormation ;
-  prov:wasGeneratedBy real:SpecimenRetrievalEvent_1 ;
+  prov:wasDerivedFrom carb:BentFormation ;
+  prov:wasGeneratedBy carb:SpecimenRetrievalEvent_1 ;
 .
-real:Mill-Z
+carb:Mill-Z
   rdf:type prov:Agent ;
   rdfs:label "Jaw crusher" ;
 .
-real:Saw-P
+carb:Saw-P
   rdf:type prov:Agent ;
   rdfs:label "Diamond saw" ;
 .
-real:SpecimenGrindingEvent_3
+carb:SpecimenGrindingEvent_3
   rdf:type prov:Activity ;
   rdfs:label "Grinding event" ;
-  prov:used real:s987654_2 ;
-  prov:wasAssociatedWith real:BarryTech ;
-  prov:wasAssociatedWith real:Mill-Z ;
+  prov:used carb:s987654_2 ;
+  prov:wasAssociatedWith carb:BarryTech ;
+  prov:wasAssociatedWith carb:Mill-Z ;
 .
-real:SpecimenRetrievalEvent_1
+carb:SpecimenRetrievalEvent_1
   rdf:type prov:Activity ;
   rdfs:label "Specimen retrieval event" ;
-  prov:used real:BentFormation ;
-  prov:wasAssociatedWith real:AvrilGeologist ;
-  prov:wasAssociatedWith real:Hammer-N ;
+  prov:used carb:BentFormation ;
+  prov:wasAssociatedWith carb:AvrilGeologist ;
+  prov:wasAssociatedWith carb:Hammer-N ;
 .
-real:SpecimenSievingEvent_4
+carb:SpecimenSievingEvent_4
   rdf:type prov:Activity ;
   rdfs:label "Sieving event" ;
-  prov:used real:s987654_2_c ;
-  prov:wasAssociatedWith real:BarryTech ;
-  prov:wasAssociatedWith real:TylerSieveStack-S ;
+  prov:used carb:s987654_2_c ;
+  prov:wasAssociatedWith carb:BarryTech ;
+  prov:wasAssociatedWith carb:TylerSieveStack-S ;
 .
-real:SpecimenSplittingEvent_2
+carb:SpecimenSplittingEvent_2
   rdf:type prov:Activity ;
   rdfs:label "Splitting event" ;
-  prov:used real:IGSN-CSI987654 ;
-  prov:wasAssociatedWith real:BarryTech ;
-  prov:wasAssociatedWith real:Saw-P ;
+  prov:used carb:IGSN-CSI987654 ;
+  prov:wasAssociatedWith carb:BarryTech ;
+  prov:wasAssociatedWith carb:Saw-P ;
 .
-real:TylerSieveStack-S
+carb:TylerSieveStack-S
   rdf:type prov:Agent ;
   rdfs:label "Tyler gauge sieve stack" ;
 .
-real:VisualAnalysisEvent_6
+carb:VisualAnalysisEvent_6
   rdf:type prov:Activity ;
   rdfs:label "Visual analysis event" ;
-  prov:used real:VisualAnalysisProtocol ;
-  prov:used real:s987654_2_c_t115 ;
-  prov:used real:s987654_2_c_t16 ;
-  prov:used real:s987654_2_c_t250 ;
-  prov:used real:s987654_2_c_t250plus ;
-  prov:used real:s987654_2_c_t32 ;
-  prov:used real:s987654_2_c_t60 ;
-  prov:used real:s987654_2_c_t9 ;
-  prov:wasAssociatedWith real:ClaudeGeologist ;
+  prov:used carb:VisualAnalysisProtocol ;
+  prov:used carb:s987654_2_c_t115 ;
+  prov:used carb:s987654_2_c_t16 ;
+  prov:used carb:s987654_2_c_t250 ;
+  prov:used carb:s987654_2_c_t250plus ;
+  prov:used carb:s987654_2_c_t32 ;
+  prov:used carb:s987654_2_c_t60 ;
+  prov:used carb:s987654_2_c_t9 ;
+  prov:wasAssociatedWith carb:ClaudeGeologist ;
 .
-real:VisualAnalysisProtocol
+carb:VisualAnalysisProtocol
   rdf:type prov:Plan ;
   rdfs:label "Visual Analysis Protocol" ;
 .
-real:s987654_1
+carb:s987654_1
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 1"^^xsd:string ;
-  prov:wasDerivedFrom real:IGSN-CSI987654 ;
-  prov:wasGeneratedBy real:SpecimenSplittingEvent_2 ;
+  prov:wasDerivedFrom carb:IGSN-CSI987654 ;
+  prov:wasGeneratedBy carb:SpecimenSplittingEvent_2 ;
 .
-real:s987654_2
+carb:s987654_2
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2"^^xsd:string ;
-  prov:wasDerivedFrom real:IGSN-CSI987654 ;
-  prov:wasGeneratedBy real:SpecimenSplittingEvent_2 ;
+  prov:wasDerivedFrom carb:IGSN-CSI987654 ;
+  prov:wasGeneratedBy carb:SpecimenSplittingEvent_2 ;
 .
-real:s987654_2_c
+carb:s987654_2_c
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2 ;
-  prov:wasGeneratedBy real:SpecimenGrindingEvent_3 ;
+  prov:wasDerivedFrom carb:s987654_2 ;
+  prov:wasGeneratedBy carb:SpecimenGrindingEvent_3 ;
 .
-real:s987654_2_c_t115
+carb:s987654_2_c_t115
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 115"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .
-real:s987654_2_c_t16
+carb:s987654_2_c_t16
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 16"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .
-real:s987654_2_c_t250
+carb:s987654_2_c_t250
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 250"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .
-real:s987654_2_c_t250plus
+carb:s987654_2_c_t250plus
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 250+"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .
-real:s987654_2_c_t32
+carb:s987654_2_c_t32
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 32"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .
-real:s987654_2_c_t60
+carb:s987654_2_c_t60
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 60"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .
-real:s987654_2_c_t9
+carb:s987654_2_c_t9
   rdf:type prov:Entity ;
   rdfs:label "specimen 987654 - split part 2 - crushed - tyler 9"^^xsd:string ;
-  prov:wasDerivedFrom real:s987654_2_c ;
-  prov:wasGeneratedBy real:SpecimenSievingEvent_4 ;
-.
-record:CarbonateResult_cpv_s987654
-  rdf:type prov:Entity ;
-  rdfs:label "Carbonate result - cpv #1" ;
-  prov:wasGeneratedBy real:CPVEvent_5 ;
-.
-record:CarbonateResult_v_s987654
-  rdf:type prov:Entity ;
-  rdfs:label "Carbonate result - v #1" ;
-  prov:wasGeneratedBy real:VisualAnalysisEvent_6 ;
+  prov:wasDerivedFrom carb:s987654_2_c ;
+  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
 .

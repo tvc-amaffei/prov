@@ -1,0 +1,153 @@
+# baseURI: http://prov.example.org/real/insect-identification
+# imports: http://www.w3.org/ns/prov
+
+@prefix bug: <http://prov.example.org/real/insect-identification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix real: <http://example.org/real/> .
+@prefix record: <http://example.org/record/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://prov.example.org/real/insect-identification>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/ns/prov> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+bug:ch-231bf
+  rdf:type prov:Entity ;
+  rdfs:label "location & habitat"^^xsd:string ;
+.
+bug:cla-24923847ac
+  rdf:type prov:Activity ;
+  rdfs:label "Classification and species identification"^^xsd:string ;
+  prov:used bug:img-a-6 ;
+  prov:used bug:mr-3236be_1 ;
+  prov:used bug:pro-1acb34f ;
+  prov:used bug:taxa-34fca23 ;
+  prov:wasAssociatedWith bug:tessa ;
+.
+bug:dna-088712
+  rdf:type prov:Activity ;
+  rdfs:label "DNA analysis" ;
+  prov:used bug:spec-a-part-6 ;
+  prov:wasAssociatedWith bug:dna-990 ;
+.
+bug:dna-990
+  rdf:type prov:Agent ;
+  rdfs:label "DNA machine"^^xsd:string ;
+.
+bug:dna-a
+  rdf:type prov:Entity ;
+  rdfs:label "DNA results"^^xsd:string ;
+  prov:wasGeneratedBy bug:dna-088712 ;
+.
+bug:field-spec-78562e6c
+  rdf:type prov:Entity ;
+  rdfs:label "Field specimen collection"^^xsd:string ;
+  prov:wasGeneratedBy bug:ret-42134523 ;
+.
+bug:fred
+  rdf:type prov:Agent ;
+  rdfs:label "Field biologist"^^xsd:string ;
+.
+bug:img-332
+  rdf:type prov:Agent ;
+  rdfs:label "imaging machine"^^xsd:string ;
+.
+bug:img-67102
+  rdf:type prov:Activity ;
+  rdfs:label "Imaging measurement" ;
+  prov:used bug:spec-a-pres ;
+  prov:wasAssociatedWith bug:img-332 ;
+  prov:wasAssociatedWith bug:tessa ;
+.
+bug:img-a-6
+  rdf:type prov:Entity ;
+  rdfs:label "Imaging and measurement results"^^xsd:string ;
+  prov:wasGeneratedBy bug:img-67102 ;
+.
+bug:mr-3236be_1
+  rdf:type prov:Entity ;
+  rdfs:label "Metadata record"^^xsd:string ;
+  prov:wasGeneratedBy bug:mrg-346 ;
+.
+bug:mr-spec-3236be
+  rdf:type prov:Entity ;
+  rdfs:label "Metadata record with speciation"^^xsd:string ;
+  prov:wasGeneratedBy bug:cla-24923847ac ;
+.
+bug:mrg-346
+  rdf:type prov:Activity ;
+  rdfs:label "Metadata record generation"^^xsd:string ;
+  prov:used bug:ch-231bf ;
+  prov:used bug:spec-a-pres ;
+.
+bug:net-87
+  rdf:type prov:Agent ;
+  rdfs:label "Net"^^xsd:string ;
+.
+bug:pre-432423ff
+  rdf:type prov:Activity ;
+  rdfs:label "Preservation and preparation" ;
+  prov:used bug:spec-a ;
+  prov:wasAssociatedWith bug:tessa ;
+.
+bug:pro-1acb34f
+  rdf:type prov:Entity ;
+  rdfs:label "Taxonomic protocol"^^xsd:string ;
+.
+bug:pub-1292
+  rdf:type prov:Activity ;
+  rdfs:label "Publication of results"^^xsd:string ;
+  prov:used bug:dna-a ;
+  prov:used bug:img-a-6 ;
+  prov:used bug:mr-spec-3236be ;
+  prov:wasAssociatedWith bug:tessa ;
+.
+bug:ret-42134523
+  rdf:type prov:Activity ;
+  rdfs:label "Specimen retrieval" ;
+  prov:wasAssociatedWith bug:fred ;
+  prov:wasAssociatedWith bug:net-87 ;
+.
+bug:sam-32678
+  rdf:type prov:Activity ;
+  rdfs:label "Tissue sampling, preservation" ;
+  prov:used bug:spec-a-pres ;
+  prov:wasAssociatedWith bug:tessa ;
+.
+bug:sep-33u1901
+  rdf:type prov:Activity ;
+  rdfs:label "Specimen separation" ;
+  prov:used bug:field-spec-78562e6c ;
+.
+bug:spec-a
+  rdf:type prov:Entity ;
+  rdfs:label "Specimen A"^^xsd:string ;
+  prov:wasGeneratedBy bug:sep-33u1901 ;
+.
+bug:spec-a-part-6
+  rdf:type prov:Entity ;
+  rdfs:label "Part 6 of Specimen A preserved"^^xsd:string ;
+  prov:wasGeneratedBy bug:sam-32678 ;
+.
+bug:spec-a-pres
+  rdf:type prov:Entity ;
+  rdfs:label "Preserved Specimen A "^^xsd:string ;
+  prov:wasGeneratedBy bug:pre-432423ff ;
+.
+bug:tax-paper-32423
+  rdf:type prov:Entity ;
+  rdfs:label "Taxonomic paper"^^xsd:string ;
+  prov:wasGeneratedBy bug:pub-1292 ;
+.
+bug:taxa-34fca23
+  rdf:type prov:Entity ;
+  rdfs:label "Taxonomic data (papers, etc)"^^xsd:string ;
+.
+bug:tessa
+  rdf:type prov:Agent ;
+  rdfs:label "Taxonomist"^^xsd:string ;
+.
