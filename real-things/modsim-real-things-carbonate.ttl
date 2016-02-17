@@ -15,177 +15,151 @@
   owl:imports <http://www.w3.org/ns/prov> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-carb:AvrilGeologist
-  rdf:type prov:Agent ;
-  rdfs:label "Avril F Geologist"^^xsd:string ;
-.
-carb:BarryTech
-  rdf:type prov:Agent ;
-  rdfs:label "Barry L Technician"^^xsd:string ;
-.
-carb:BentFormation
-  rdf:type prov:Entity ;
-  rdfs:label "Bentleigh Formation"^^xsd:string ;
-.
-carb:CPVEvent_5
+carb:CPV-2015-07-23
   rdf:type prov:Activity ;
   rdfs:label "CPV analysis event" ;
+  prov:endedAtTime "2015-07-23T13:00:00"^^xsd:dateTime ;
+  prov:startedAtTime "2015-07-23T12:00:00"^^xsd:dateTime ;
   prov:used carb:CPVProtocol ;
-  prov:used carb:s987654_2_c_t115 ;
-  prov:used carb:s987654_2_c_t16 ;
-  prov:used carb:s987654_2_c_t250 ;
-  prov:used carb:s987654_2_c_t250plus ;
-  prov:used carb:s987654_2_c_t32 ;
-  prov:used carb:s987654_2_c_t60 ;
-  prov:used carb:s987654_2_c_t9 ;
-  prov:wasAssociatedWith carb:DianeTech ;
+  prov:used carb:LF-09-2-gt-80 ;
+  prov:used carb:LF-09-2-lt-80 ;
+  prov:wasAssociatedWith carb:TechnicianTJ ;
 .
 carb:CPVProtocol
   rdf:type prov:Plan ;
   rdfs:label "CPV Protocol" ;
 .
-carb:CarbonateResult_cpv_s987654
+carb:CarbonateResult_cpv_LF-09
   rdf:type prov:Entity ;
   rdfs:label "Carbonate result - cpv #1" ;
-  prov:wasGeneratedBy carb:CPVEvent_5 ;
+  prov:value "81.6% CO3"^^xsd:string ;
+  prov:wasGeneratedBy carb:CPV-2015-07-23 ;
 .
-carb:CarbonateResult_v_s987654
+carb:CarbonateResult_v_LF-09
   rdf:type prov:Entity ;
   rdfs:label "Carbonate result - v #1" ;
-  prov:wasGeneratedBy carb:VisualAnalysisEvent_6 ;
+  prov:value "75% CO3"^^xsd:string ;
+  prov:wasGeneratedBy carb:Viz-2015-08-02 ;
 .
-carb:ClaudeGeologist
+carb:FieldSampling-2015-03-25-47
+  rdf:type prov:Activity ;
+  rdfs:label "Specimen retrieval event" ;
+  prov:endedAtTime "2015-03-25T12:15:00"^^xsd:dateTime ;
+  prov:startedAtTime "2015-03-25T12:00:00"^^xsd:dateTime ;
+  prov:used carb:LeedervilleFormation ;
+  prov:wasAssociatedWith carb:GeologistMR ;
+  prov:wasAssociatedWith carb:Hammer-b45 ;
+.
+carb:GeologistMA
   rdf:type prov:Agent ;
-  rdfs:label "Claude L Geologist"^^xsd:string ;
+  rdfs:label "Maham Aziz"^^xsd:string ;
 .
-carb:DianeTech
+carb:GeologistMR
   rdf:type prov:Agent ;
-  rdfs:label "Diane L Technician"^^xsd:string ;
+  rdfs:label "Michelle Rouse"^^xsd:string ;
 .
-carb:Hammer-N
+carb:Grinding-2015-07-18-6
+  rdf:type prov:Activity ;
+  rdfs:label "Grinding Event"^^xsd:string ;
+  prov:endedAtTime "2015-07-18T13:00:00"^^xsd:dateTime ;
+  prov:startedAtTime "2015-07-18T12:00:00"^^xsd:dateTime ;
+  prov:used carb:LF-09-2 ;
+  prov:wasAssociatedWith carb:Mill-m7 ;
+  prov:wasAssociatedWith carb:TechnicianAD ;
+.
+carb:Hammer-b45
   rdf:type prov:Agent ;
   rdfs:label "G-pick" ;
 .
-carb:IGSN-CSI987654
+carb:IGSN-CSIWALF09
   rdf:type prov:Entity ;
-  rdfs:label "Field specimen 987654"^^xsd:string ;
-  prov:wasDerivedFrom carb:BentFormation ;
-  prov:wasGeneratedBy carb:SpecimenRetrievalEvent_1 ;
+  rdfs:label "LF-09"^^xsd:string ;
+  prov:wasDerivedFrom carb:LeedervilleFormation ;
+  prov:wasGeneratedBy carb:FieldSampling-2015-03-25-47 ;
 .
-carb:Mill-Z
+carb:LF-09-1
+  rdf:type prov:Entity ;
+  rdfs:label "specimen LF-09 - split part 1"^^xsd:string ;
+  prov:wasDerivedFrom carb:IGSN-CSIWALF09 ;
+  prov:wasGeneratedBy carb:Splitting-2015-04-18-9 ;
+.
+carb:LF-09-2
+  rdf:type prov:Entity ;
+  rdfs:label "specimen LF-09 - split part 2"^^xsd:string ;
+  prov:wasDerivedFrom carb:IGSN-CSIWALF09 ;
+  prov:wasGeneratedBy carb:Splitting-2015-04-18-9 ;
+.
+carb:LF-09-2-gt-80
+  rdf:type prov:Entity ;
+  rdfs:label "specimen LF-09 - split part 2 - crushed - gt tyler 80"^^xsd:string ;
+  prov:wasDerivedFrom carb:LF-09-2-pulp ;
+  prov:wasGeneratedBy carb:Sieving-2015-07-18 ;
+.
+carb:LF-09-2-lt-80
+  rdf:type prov:Entity ;
+  rdfs:label "specimen LF-09 - split part 2 - crushed - lt tyler 80"^^xsd:string ;
+  prov:wasDerivedFrom carb:LF-09-2-pulp ;
+  prov:wasGeneratedBy carb:Sieving-2015-07-18 ;
+.
+carb:LF-09-2-pulp
+  rdf:type prov:Entity ;
+  rdfs:label "specimen LF-09 - split part 2 - crushed"^^xsd:string ;
+  prov:wasDerivedFrom carb:LF-09-2 ;
+  prov:wasGeneratedBy carb:Grinding-2015-07-18-6 ;
+.
+carb:LeedervilleFormation
+  rdf:type prov:Entity ;
+  rdfs:label "Leederville Formation"^^xsd:string ;
+.
+carb:Mill-m7
   rdf:type prov:Agent ;
   rdfs:label "Jaw crusher" ;
 .
-carb:Saw-P
+carb:Saw-s4
   rdf:type prov:Agent ;
   rdfs:label "Diamond saw" ;
 .
-carb:SpecimenGrindingEvent_3
-  rdf:type prov:Activity ;
-  rdfs:label "Grinding event" ;
-  prov:used carb:s987654_2 ;
-  prov:wasAssociatedWith carb:BarryTech ;
-  prov:wasAssociatedWith carb:Mill-Z ;
-.
-carb:SpecimenRetrievalEvent_1
-  rdf:type prov:Activity ;
-  rdfs:label "Specimen retrieval event" ;
-  prov:used carb:BentFormation ;
-  prov:wasAssociatedWith carb:AvrilGeologist ;
-  prov:wasAssociatedWith carb:Hammer-N ;
-.
-carb:SpecimenSievingEvent_4
+carb:Sieving-2015-07-18
   rdf:type prov:Activity ;
   rdfs:label "Sieving event" ;
-  prov:used carb:s987654_2_c ;
-  prov:wasAssociatedWith carb:BarryTech ;
-  prov:wasAssociatedWith carb:TylerSieveStack-S ;
+  prov:endedAtTime "2015-07-18T12:30:00"^^xsd:dateTime ;
+  prov:startedAtTime "2015-07-18T12:00:00"^^xsd:dateTime ;
+  prov:used carb:LF-09-2-pulp ;
+  prov:wasAssociatedWith carb:TechnicianAD ;
+  prov:wasAssociatedWith carb:TylerSieveStack-80-200 ;
 .
-carb:SpecimenSplittingEvent_2
+carb:Splitting-2015-04-18-9
   rdf:type prov:Activity ;
   rdfs:label "Splitting event" ;
-  prov:used carb:IGSN-CSI987654 ;
-  prov:wasAssociatedWith carb:BarryTech ;
-  prov:wasAssociatedWith carb:Saw-P ;
+  prov:endedAtTime "2015-04-18T12:05:00"^^xsd:dateTime ;
+  prov:startedAtTime "2015-04-18T12:00:00"^^xsd:dateTime ;
+  prov:used carb:IGSN-CSIWALF09 ;
+  prov:wasAssociatedWith carb:Saw-s4 ;
+  prov:wasAssociatedWith carb:TechnicianAD ;
 .
-carb:TylerSieveStack-S
+carb:TechnicianAD
+  rdf:type prov:Agent ;
+  rdfs:label "Amelia Davis"^^xsd:string ;
+.
+carb:TechnicianTJ
+  rdf:type prov:Agent ;
+  rdfs:label "Tony Jones"^^xsd:string ;
+.
+carb:TylerSieveStack-80-200
   rdf:type prov:Agent ;
   rdfs:label "Tyler gauge sieve stack" ;
 .
-carb:VisualAnalysisEvent_6
-  rdf:type prov:Activity ;
-  rdfs:label "Visual analysis event" ;
-  prov:used carb:VisualAnalysisProtocol ;
-  prov:used carb:s987654_2_c_t115 ;
-  prov:used carb:s987654_2_c_t16 ;
-  prov:used carb:s987654_2_c_t250 ;
-  prov:used carb:s987654_2_c_t250plus ;
-  prov:used carb:s987654_2_c_t32 ;
-  prov:used carb:s987654_2_c_t60 ;
-  prov:used carb:s987654_2_c_t9 ;
-  prov:wasAssociatedWith carb:ClaudeGeologist ;
-.
 carb:VisualAnalysisProtocol
   rdf:type prov:Plan ;
-  rdfs:label "Visual Analysis Protocol" ;
+  rdfs:label "Visual Analysis Protocol CC"^^xsd:string ;
 .
-carb:s987654_1
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 1"^^xsd:string ;
-  prov:wasDerivedFrom carb:IGSN-CSI987654 ;
-  prov:wasGeneratedBy carb:SpecimenSplittingEvent_2 ;
-.
-carb:s987654_2
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2"^^xsd:string ;
-  prov:wasDerivedFrom carb:IGSN-CSI987654 ;
-  prov:wasGeneratedBy carb:SpecimenSplittingEvent_2 ;
-.
-carb:s987654_2_c
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2 ;
-  prov:wasGeneratedBy carb:SpecimenGrindingEvent_3 ;
-.
-carb:s987654_2_c_t115
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 115"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
-.
-carb:s987654_2_c_t16
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 16"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
-.
-carb:s987654_2_c_t250
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 250"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
-.
-carb:s987654_2_c_t250plus
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 250+"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
-.
-carb:s987654_2_c_t32
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 32"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
-.
-carb:s987654_2_c_t60
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 60"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
-.
-carb:s987654_2_c_t9
-  rdf:type prov:Entity ;
-  rdfs:label "specimen 987654 - split part 2 - crushed - tyler 9"^^xsd:string ;
-  prov:wasDerivedFrom carb:s987654_2_c ;
-  prov:wasGeneratedBy carb:SpecimenSievingEvent_4 ;
+carb:Viz-2015-08-02
+  rdf:type prov:Activity ;
+  rdfs:label "Visual analysis event" ;
+  prov:endedAtTime "2015-08-02T12:30:00"^^xsd:dateTime ;
+  prov:startedAtTime "2015-08-02T12:00:00"^^xsd:dateTime ;
+  prov:used carb:LF-09-2-gt-80 ;
+  prov:used carb:LF-09-2-lt-80 ;
+  prov:used carb:VisualAnalysisProtocol ;
+  prov:wasAssociatedWith carb:GeologistMA ;
 .
